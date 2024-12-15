@@ -1,0 +1,96 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<?xml-stylesheet type="text/xsl" href="catalogue.xsl"?>
+<catalogue>
+  <livre>
+    <titre>Apprendre le Java</titre>
+    <auteur>Jean Dupont</auteur>
+    <prix>29.99</prix>
+  </livre>
+  <livre>
+    <titre>Guide de l'EXSLT</titre>
+    <auteur>Marie Curie</auteur>
+    <prix>39.99</prix>
+  </livre>
+</catalogue>
+=======
+=======
+>>>>>>> origin/vk
+<?xml-stylesheet type="text/xsl" href="catalogue.xsl"?>
+<catalogue>
+  <livre>
+    <titre>Apprendre le Java</titre>
+    <auteur>Jean Dupont</auteur>
+    <prix>29.99</prix>
+  </livre>
+  <livre>
+    <titre>Guide de l'EXSLT</titre>
+    <auteur>Marie Curie</auteur>
+    <prix>39.99</prix>
+  </livre>
+</catalogue>
+<<<<<<< HEAD
+>>>>>>> update
+=======
+>>>>>>> origin/vk
+=======
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:exsl="http://exslt.org/common"
+                extension-element-prefixes="exsl">
+  <xsl:template match="/">
+    <!-- Utilisation de exsl:node-set pour convertir une chaîne en un ensemble de nœuds -->
+    <xsl:variable name="myNodeset" select="exsl:node-set('<root><item>1</item><item>2</item></root>')"/>
+    <!-- Vérification du type d'objet -->
+    <xsl:variable name="type" select="exsl:object-type($myNodeset)"/>
+    <xsl:value-of select="$type"/>
+  </xsl:template>
+</xsl:stylesheet>
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://exslt.org/math"
+                extension-element-prefixes="math">
+  <xsl:template match="/">
+    <xsl:variable name="values" select="'1 3 5 2 4'"/>
+    <!-- Utilisation de math:highest pour obtenir la valeur la plus élevée -->
+    <xsl:value-of select="math:highest($values)"/>
+    <xsl:text>, </xsl:text>
+    <!-- Utilisation de math:min pour obtenir la valeur la plus basse -->
+    <xsl:value-of select="math:min($values)"/>
+  </xsl:template>
+</xsl:stylesheet>
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:regexp="http://exslt.org/regular-expressions"
+                extension-element-prefixes="regexp">
+  <xsl:template match="/">
+    <!-- Remplacement d'un texte à l'aide d'expressions régulières -->
+    <xsl:value-of select="regexp:replace('Hello World', 'World', 'EXSLT')"/>
+  </xsl:template>
+</xsl:stylesheet>
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:set="http://exslt.org/sets"
+                extension-element-prefixes="set">
+  <xsl:template match="/">
+    <xsl:variable name="items" select="'a b a c b'"/>
+    <!-- Utilisation de set:distinct pour obtenir des valeurs uniques -->
+    <xsl:value-of select="set:distinct($items)"/>
+  </xsl:template>
+</xsl:stylesheet><xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:str="http://exslt.org/strings"
+                extension-element-prefixes="str">
+  <xsl:template match="/">
+    <xsl:variable name="text" select="'one,two,three'"/>
+    <!-- Utilisation de str:split pour diviser une chaîne -->
+    <xsl:variable name="splitText" select="str:split($text, ',')"/>
+    <xsl:for-each select="$splitText">
+      <xsl:value-of select="."/>
+      <xsl:text> </xsl:text>
+    </xsl:for-each>
+  </xsl:template>
+</xsl:stylesheet>
+
+>>>>>>> b58451c (mise a jour)

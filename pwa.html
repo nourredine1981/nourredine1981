@@ -1,0 +1,406 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>PWA de Nourredine</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #motivationalMessage {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Y4EQBYXB4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6Y4EQBYXB4');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MQDLV8CM');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Firebase Configuration -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script>
+   const firebaseConfig = {
+  apiKey: "AIzaSyDMGcmhfQcq6-nJLqRCdVPTIBRm5ili_1M",
+  authDomain: "nourredine1981-2994e.firebaseapp.com",
+  projectId: "nourredine1981-2994e",
+  storageBucket: "nourredine1981-2994e.firebasestorage.app",
+  messagingSenderId: "629973451845",
+  appId: "1:629973451845:web:658fba0e2752e79f80cf2c"
+};
+    firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Fonctions JavaScript pour afficher la date -->
+    <script>
+    function getLongDateString() {
+        var monthNames = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+        var dayNames = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+        var dayOfWeek = this.getDay();
+        var day = dayNames[dayOfWeek];
+        var dateOfMonth = this.getDate();
+        var monthNo = this.getMonth();
+        var month = monthNames[monthNo];
+        var year = this.getFullYear();
+        var dateStr = day + " " + dateOfMonth + " " + month + " " + year;
+        return dateStr;
+    }
+
+    Date.prototype.getLongDateString = getLongDateString;
+
+    function DocDate() {
+        var DateTimeStr = document.lastModified;
+        var secOffset = Date.parse(DateTimeStr);
+        var dateStr = "Unknown";
+
+        if (secOffset != 0 && secOffset != null) { // Pour les navigateurs qui supportent lastModified
+            var aDate = new Date();
+            aDate.setTime(secOffset);
+            dateStr = aDate.getLongDateString();
+        }
+
+        return dateStr;
+    }
+
+    window.addEventListener('load', function() {
+        document.getElementById('lastModified').textContent = "Dernière modification : " + DocDate();
+        
+        // Compteur de visiteurs
+        var visitorCountRef = firebase.database().ref('visitors/count');
+        visitorCountRef.transaction(function(currentCount) {
+            return (currentCount || 0) + 1;
+        }).then(function(snapshot) {
+            document.getElementById('visitorCount').textContent = "Nombre de visiteurs : " + snapshot.snapshot.val();
+        });
+    });
+    </script>
+</head>
+<body>
+    <h1>PWA de Nourredine</h1>
+    <p id="motivationalMessage"></p>
+    <p id="lastModified"></p> <!-- Affichage de la date de dernière modification -->
+    <p id="visitorCount"></p> <!-- Affichage du compteur de visiteurs -->
+
+    <!-- Enregistrer le service worker -->
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function(registration) {
+                    console.log('Service Worker registered with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('Service Worker registration failed: ', err);
+                });
+        });
+    }
+    </script>
+</body>
+</html>
+=======
+=======
+>>>>>>> origin/vk
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>PWA de Nourredine</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #motivationalMessage {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Y4EQBYXB4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6Y4EQBYXB4');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MQDLV8CM');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Firebase Configuration -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script>
+   const firebaseConfig = {
+  apiKey: "AIzaSyDMGcmhfQcq6-nJLqRCdVPTIBRm5ili_1M",
+  authDomain: "nourredine1981-2994e.firebaseapp.com",
+  projectId: "nourredine1981-2994e",
+  storageBucket: "nourredine1981-2994e.firebasestorage.app",
+  messagingSenderId: "629973451845",
+  appId: "1:629973451845:web:658fba0e2752e79f80cf2c"
+};
+    firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Fonctions JavaScript pour afficher la date -->
+    <script>
+    function getLongDateString() {
+        var monthNames = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+        var dayNames = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+        var dayOfWeek = this.getDay();
+        var day = dayNames[dayOfWeek];
+        var dateOfMonth = this.getDate();
+        var monthNo = this.getMonth();
+        var month = monthNames[monthNo];
+        var year = this.getFullYear();
+        var dateStr = day + " " + dateOfMonth + " " + month + " " + year;
+        return dateStr;
+    }
+
+    Date.prototype.getLongDateString = getLongDateString;
+
+    function DocDate() {
+        var DateTimeStr = document.lastModified;
+        var secOffset = Date.parse(DateTimeStr);
+        var dateStr = "Unknown";
+
+        if (secOffset != 0 && secOffset != null) { // Pour les navigateurs qui supportent lastModified
+            var aDate = new Date();
+            aDate.setTime(secOffset);
+            dateStr = aDate.getLongDateString();
+        }
+
+        return dateStr;
+    }
+
+    window.addEventListener('load', function() {
+        document.getElementById('lastModified').textContent = "Dernière modification : " + DocDate();
+        
+        // Compteur de visiteurs
+        var visitorCountRef = firebase.database().ref('visitors/count');
+        visitorCountRef.transaction(function(currentCount) {
+            return (currentCount || 0) + 1;
+        }).then(function(snapshot) {
+            document.getElementById('visitorCount').textContent = "Nombre de visiteurs : " + snapshot.snapshot.val();
+        });
+    });
+    </script>
+</head>
+<body>
+    <h1>PWA de Nourredine</h1>
+    <p id="motivationalMessage"></p>
+    <p id="lastModified"></p> <!-- Affichage de la date de dernière modification -->
+    <p id="visitorCount"></p> <!-- Affichage du compteur de visiteurs -->
+
+    <!-- Enregistrer le service worker -->
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function(registration) {
+                    console.log('Service Worker registered with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('Service Worker registration failed: ', err);
+                });
+        });
+    }
+    </script>
+</body>
+</html>
+<<<<<<< HEAD
+>>>>>>> update
+=======
+>>>>>>> origin/vk
+=======
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page de Nourredine</title>
+    <link rel="manifest" href="pwa.json">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #motivationalMessage {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Y4EQBYXB4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6Y4EQBYXB4');
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MQDLV8CM');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+    function createHexArray(n) {
+        this.length = n;
+        for (var i = 1; i <= n; i++)
+            this[i] = i - 1;
+
+        this[11] = "A";
+        this[12] = "B";
+        this[13] = "C";
+        this[14] = "D";
+        this[15] = "E";
+        this[16] = "F";
+        return this;
+    }
+
+    hx = new createHexArray(16);
+
+    function convertToHex(x) {
+        if (x < 17) x = 16;
+        var high = x / 16;
+        var s = high+"";
+        s = s.substring(0, 2);
+        high = parseInt(s, 10);
+        var left = hx[high + 1];
+        var low = x - high * 16;
+        if (low < 1) low = 1;
+        s = low + "";
+        s = s.substring(0, 2);
+        low = parseInt(s, 10);
+        var right = hx[low + 1];
+        var string = left + "" + right;
+        return string;
+    }
+
+    function makeRainbow(text) {
+        text = text.substring(0, text.length);
+        color_d1 = 255;
+        mul = color_d1 / text.length;
+        for (var i = 0; i < text.length; i++) {
+            color_d1 = 255 * Math.sin(i / (text.length / 3));
+            color_h1 = convertToHex(color_d1);
+            color_d2 = mul * i;
+            color_h2 = convertToHex(color_d2);
+
+            var k = text.length;
+            var j = k - i;
+            if (j < 0) j = 0;
+            color_d3 = mul * j;
+            color_h3 = convertToHex(color_d3);
+
+            document.write("<font color=\"#" + color_h3 + color_h1 + color_h2 + "\">" + text.substring(i, i + 1) + "</font>");
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>Page de Nourredine</h1>
+    <p id="motivationalMessage"></p>
+</body>
+</html>
+>>>>>>> b58451c (mise a jour)

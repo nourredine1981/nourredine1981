@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+git remote set-url origin https://hp_YfdjbdmQWmtrZubAOcOxhIIgrl3PVt0DdJZD@github.com/nourredine1981/vk.git
+=======
+git remote set-url origin https://hp_YfdjbdmQWmtrZubAOcOxhIIgrl3PVt0DdJZD@github.com/nourredine1981/vk.git
+>>>>>>> update
+=======
+git remote set-url origin https://hp_YfdjbdmQWmtrZubAOcOxhIIgrl3PVt0DdJZD@github.com/nourredine1981/vk.git
+>>>>>>> origin/vk
+hp_YfdjbdmQWmtrZubAOcOxhIIgrl3PVt0DdJZD:x-oauth-basic

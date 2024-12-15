@@ -1,0 +1,7 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger: - main pool: vmImage: 'ubuntu-latest' steps: - checkout: self persistCredentials: true - task: UseNode@0 inputs: versionSpec: '14.x' displayName: 'Use Node.js 14.x' - script: | npm install npm run build displayName: 'Install dependencies and build' - task: PublishPipelineArtifact@1 inputs: targetPath: '$(Build.ArtifactStagingDirectory)' artifactName: 'webapp' displayName: 'Publish Artifact' - task: Bash@3 inputs: targetType: 'inline' script: | git config user.email "you@example.com" git config user.name "Your Name" git clone --branch=gh-pages https://$(System.AccessToken)@github.com/nourredine1981/vk.git gh-pages cd gh-pages cp -r ../dist/* . git add --all git commit -m "Deploy to GitHub Pages" git push origin gh-pages displayName: 'Deploy to GitHub Pages' env: GITHUB_TOKEN: $(System.AccessToken)
+

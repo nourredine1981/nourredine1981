@@ -1,0 +1,39 @@
+.git/
+
+.vs/
+
+.git/modules/vk
+# Ignorer les fichiers et dossiers générés par le système
+.DS_Store
+Thumbs.db
+
+# Ignorer les fichiers et dossiers compilés
+*.class
+*.o
+*.so
+*.dll
+*.exe
+
+# Ignorer les fichiers de configuration de l'éditeur
+.vscode/
+.idea/
+*.swp
+
+# Ignorer les fichiers de logs
+*.log
+
+# Ignorer les fichiers temporaires
+*.tmp
+
+# Ignorer les dépendances de build
+node_modules/
+dist/
+build/
+
+# Ignorer le répertoire Git lui-même (bien que cela soit rare)
+.git/
+
+# Ignorer les fichiers spécifiques au projet
+credentials.json
+config.yaml
+

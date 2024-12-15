@@ -1,0 +1,361 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/vk
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Nordine Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image avec Lien</h1>
+    <img id="linkedImage1" src="https://nourredine1981.github.io/vk/n.jpg" alt="Entrez">
+    <img id="linkedImage2" src="https://nourredine1981.github.io/vk/n2.jpg" alt="Entrez">
+    <img id="linkedImage3" src="https://nourredine1981.github.io/vk/n3.jpg" alt="Entrez">
+    <img id="linkedImage4" src="https://nourredine1981.github.io/vk/n4.jpg" alt="Entrez">
+    <img id="linkedImage5" src="https://nourredine1981.github.io/vk/n5.jpg" alt="Entrez">
+    <img id="linkedImage6" src="https://nourredine1981.github.io/vk/n6.jpg" alt="Entrez">
+	<img id="linkedImage1" src="https://nourredine1981.github.io/vk/n7.jpg" alt="Entrez">
+    <img id="linkedImage2" src="https://nourredine1981.github.io/vk/n8.jpg" alt="Entrez">
+    <img id="linkedImage3" src="https://nourredine1981.github.io/vk/n9.jpg" alt="Entrez">
+    <img id="linkedImage4" src="https://nourredine1981.github.io/vk/n10.jpg" alt="Entrez">
+    <img id="linkedImage5" src="https://nourredine1981.github.io/vk/n11.jpg" alt="Entrez">
+    <img id="linkedImage6" src="https://nourredine1981.github.io/vk/n12.jpg" alt="Entrez">
+
+    <h1>Images avec Lien dans Plusieurs Langues</h1>
+    <img id="linkedImageRussian" src="https://via.placeholder.com/300x200?text=Войти" alt="Войти">
+    <img id="linkedImageLatin" src="https://via.placeholder.com/300x200?text=Intrare" alt="Intrare">
+    <img id="linkedImageArabic" src="https://via.placeholder.com/300x200?text=ادخل" alt="ادخل">
+
+    <h1>Flux RSS Télépathie</h1>
+    <ul id="rssFeed"></ul>
+
+    <script>
+        document.getElementById('linkedImage1').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage2').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage3').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage4').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage5').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage6').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+
+        document.getElementById('linkedImageRussian').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImageLatin').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImageArabic').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+
+        const rssUrls = [
+            'https://cors-anywhere.herokuapp.com/https://www.service-public.fr/abonnements/rss/actu-actualites-particuliers.rss'
+        ];
+
+        async function fetchRSS(url) {
+            const response = await fetch(url);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(text, 'text/xml');
+            return xml.querySelectorAll('item');
+        }
+
+        async function displayRandomRSS() {
+            const randomUrl = rssUrls[Math.floor(Math.random() * rssUrls.length)];
+            const items = await fetchRSS(randomUrl);
+            const rssFeed = document.getElementById('rssFeed');
+            rssFeed.innerHTML = ''; // Clear previous items
+
+            items.forEach(item => {
+                const title = item.querySelector('title').textContent;
+                const link = item.querySelector('link').textContent;
+                const listItem = document.createElement('li');
+                const anchor = document.createElement('a');
+                anchor.href = link;
+                anchor.textContent = title;
+                anchor.target = '_blank';
+                listItem.appendChild(anchor);
+                rssFeed.appendChild(listItem);
+            });
+        }
+
+        setInterval(displayRandomRSS, 10000); // Change the RSS feed every 10 seconds
+        displayRandomRSS(); // Display the first RSS feed immediately
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+	
+=======
+<<<<<<< HEAD
+>>>>>>> update
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Nordine Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image avec Lien</h1>
+    <img id="linkedImage1" src="https://nourredine1981.github.io/vk/n.jpg" alt="Entrez">
+    <img id="linkedImage2" src="https://nourredine1981.github.io/vk/n2.jpg" alt="Entrez">
+    <img id="linkedImage3" src="https://nourredine1981.github.io/vk/n3.jpg" alt="Entrez">
+    <img id="linkedImage4" src="https://nourredine1981.github.io/vk/n4.jpg" alt="Entrez">
+    <img id="linkedImage5" src="https://nourredine1981.github.io/vk/n5.jpg" alt="Entrez">
+    <img id="linkedImage6" src="https://nourredine1981.github.io/vk/n6.jpg" alt="Entrez">
+	<img id="linkedImage1" src="https://nourredine1981.github.io/vk/n7.jpg" alt="Entrez">
+    <img id="linkedImage2" src="https://nourredine1981.github.io/vk/n8.jpg" alt="Entrez">
+    <img id="linkedImage3" src="https://nourredine1981.github.io/vk/n9.jpg" alt="Entrez">
+    <img id="linkedImage4" src="https://nourredine1981.github.io/vk/n10.jpg" alt="Entrez">
+    <img id="linkedImage5" src="https://nourredine1981.github.io/vk/n11.jpg" alt="Entrez">
+    <img id="linkedImage6" src="https://nourredine1981.github.io/vk/n12.jpg" alt="Entrez">
+
+    <h1>Images avec Lien dans Plusieurs Langues</h1>
+    <img id="linkedImageRussian" src="https://via.placeholder.com/300x200?text=Войти" alt="Войти">
+    <img id="linkedImageLatin" src="https://via.placeholder.com/300x200?text=Intrare" alt="Intrare">
+    <img id="linkedImageArabic" src="https://via.placeholder.com/300x200?text=ادخل" alt="ادخل">
+
+    <h1>Flux RSS Télépathie</h1>
+    <ul id="rssFeed"></ul>
+
+    <script>
+        document.getElementById('linkedImage1').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage2').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage3').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage4').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage5').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage6').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+
+        document.getElementById('linkedImageRussian').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImageLatin').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImageArabic').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+
+        const rssUrls = [
+            'https://cors-anywhere.herokuapp.com/https://www.service-public.fr/abonnements/rss/actu-actualites-particuliers.rss'
+        ];
+
+        async function fetchRSS(url) {
+            const response = await fetch(url);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(text, 'text/xml');
+            return xml.querySelectorAll('item');
+        }
+
+        async function displayRandomRSS() {
+            const randomUrl = rssUrls[Math.floor(Math.random() * rssUrls.length)];
+            const items = await fetchRSS(randomUrl);
+            const rssFeed = document.getElementById('rssFeed');
+            rssFeed.innerHTML = ''; // Clear previous items
+
+            items.forEach(item => {
+                const title = item.querySelector('title').textContent;
+                const link = item.querySelector('link').textContent;
+                const listItem = document.createElement('li');
+                const anchor = document.createElement('a');
+                anchor.href = link;
+                anchor.textContent = title;
+                anchor.target = '_blank';
+                listItem.appendChild(anchor);
+                rssFeed.appendChild(listItem);
+            });
+        }
+
+        setInterval(displayRandomRSS, 10000); // Change the RSS feed every 10 seconds
+        displayRandomRSS(); // Display the first RSS feed immediately
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+	
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/vk
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Nordine Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image avec Lien</h1>
+    <img id="linkedImage1" src="https://nourredine1981.github.io/vk/n.jpg" alt="Entrez">
+    <img id="linkedImage2" src="https://nourredine1981.github.io/vk/n2.jpg" alt="Entrez">
+    <img id="linkedImage3" src="https://nourredine1981.github.io/vk/n3.jpg" alt="Entrez">
+    <img id="linkedImage4" src="https://nourredine1981.github.io/vk/n4.jpg" alt="Entrez">
+    <img id="linkedImage5" src="https://nourredine1981.github.io/vk/n5.jpg" alt="Entrez">
+    <img id="linkedImage6" src="https://nourredine1981.github.io/vk/n6.jpg" alt="Entrez">
+
+    <h1>Images avec Lien dans Plusieurs Langues</h1>
+    <img id="linkedImageRussian" src="https://via.placeholder.com/300x200?text=Войти" alt="Войти">
+    <img id="linkedImageLatin" src="https://via.placeholder.com/300x200?text=Intrare" alt="Intrare">
+    <img id="linkedImageArabic" src="https://via.placeholder.com/300x200?text=ادخل" alt="ادخل">
+
+    <h1>Flux RSS Télépathie</h1>
+    <ul id="rssFeed"></ul>
+
+    <script>
+        document.getElementById('linkedImage1').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage2').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage3').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage4').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage5').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImage6').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+
+        document.getElementById('linkedImageRussian').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImageLatin').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+        document.getElementById('linkedImageArabic').addEventListener('click', function() {
+            window.location.href = 'nourredine.html';
+        });
+
+        const rssUrls = [
+            'https://cors-anywhere.herokuapp.com/https://www.service-public.fr/abonnements/rss/actu-actualites-particuliers.rss'
+        ];
+
+        async function fetchRSS(url) {
+            const response = await fetch(url);
+            const text = await response.text();
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(text, 'text/xml');
+            return xml.querySelectorAll('item');
+        }
+
+        async function displayRandomRSS() {
+            const randomUrl = rssUrls[Math.floor(Math.random() * rssUrls.length)];
+            const items = await fetchRSS(randomUrl);
+            const rssFeed = document.getElementById('rssFeed');
+            rssFeed.innerHTML = ''; // Clear previous items
+
+            items.forEach(item => {
+                const title = item.querySelector('title').textContent;
+                const link = item.querySelector('link').textContent;
+                const listItem = document.createElement('li');
+                const anchor = document.createElement('a');
+                anchor.href = link;
+                anchor.textContent = title;
+                anchor.target = '_blank';
+                listItem.appendChild(anchor);
+                rssFeed.appendChild(listItem);
+            });
+        }
+
+        setInterval(displayRandomRSS, 10000); // Change the RSS feed every 10 seconds
+        displayRandomRSS(); // Display the first RSS feed immediately
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+	
+<<<<<<< HEAD
+=======
+>>>>>>> update
+=======
+>>>>>>> origin/vk
+>>>>>>> b58451c (mise a jour)
